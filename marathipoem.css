@@ -1,0 +1,106 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the font */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Kalam", serif;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    background-color: #f6fff8;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Center the .poem-div and make it a row */
+.poem-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the child elements horizontally */
+    align-items: start; /* Center the child elements vertically */
+    gap: 20px; /* Add space between elements */
+    text-align: center; /* Center the text inside each div */
+    width: 100%; /* Add this to ensure proper width */
+}
+
+.title h1{
+    font-weight: bold;
+}
+
+.poem {
+    text-align: left;   /* Aligns the text to the left */
+    font-size: 18px;    /* Adjust font size as needed */
+    line-height: 1.6;   /* Adjust line height for readability */
+  }
+  .poem p {
+    margin: 0;  /* Removes default paragraph margin */
+    font-size: 15px;
+  }
+ .author p{
+   font-weight: bold;
+}
+
+.btn {
+    text-align: center;  
+    margin-top: 20px; 
+    
+}
+
+.btn a {
+    text-decoration: none;  /* Removes underline */
+}
+
+.btn button{
+    font-family: "Kalam", serif;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.18s;  
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #6b9080;
+    background-color: #eaf4f4;
+}
+
+.btn button:hover {
+    box-shadow: 5px 5px black; 
+}
+.btn button:hover #buttonText {
+    visibility: hidden;  
+}
+
+
+.btn button:hover::after {
+    content: "आता चल ना!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 18px;
+    font-family: "Kalam", serif;
+}
+
+
+.btn button span {
+    visibility: visible;
+   
+}

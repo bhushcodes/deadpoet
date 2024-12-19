@@ -1,0 +1,105 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the font */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Special Elite", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6fff8;
+   
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.poem-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    text-align: center;
+    width: 100%; /* Add this to ensure proper width */
+}
+
+.title h1 {
+    font-weight: bold;
+}
+
+.poem {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    width: 100%; /* Add this to ensure proper width */
+}
+
+.poem p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.author p {
+    font-weight: bold;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+.btn button {
+    font-family: "Special Elite", serif;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #6b9080;
+    background-color: #eaf4f4;
+    transition: 0.18s;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button:hover {
+    box-shadow: 5px 5px black;
+}
+
+.btn button:hover span {
+    visibility: hidden;
+}
+
+.btn button:hover::after {
+    content: "Come on, let's go!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 18px;
+    font-family: "Special Elite", serif;
+}
+
+.btn button span {
+    visibility: visible;
+}

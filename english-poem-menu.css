@@ -1,0 +1,40 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the font */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Special Elite", serif;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    background-color: #f6fff8;
+}
+
+/* Center the .poem-div and make it a row */
+.poem-div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    border: 1px solid black;
+    width: 100%; /* Add this to ensure proper width */
+    height: 100%;
+    padding: 10vh;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+p{
+    transition: 0.18s;
+}
+p:hover{
+    font-weight: bold;
+}
