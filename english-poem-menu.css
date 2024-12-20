@@ -21,11 +21,11 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 20px;
-    border: 1px solid black;
+    gap: 1.25rem;
+    border: 0.063rem solid black;
     width: 100%; /* Add this to ensure proper width */
     height: 100%;
-    padding: 10vh;
+    padding: 5.144rem;
 }
 a{
     text-decoration: none;
