@@ -1,18 +1,16 @@
-/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply the font */
 html, body {
     height: 100%;
     width: 100%;
     font-family: "Kalam", serif;
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
+    justify-content: center; 
+    align-items: center; 
     background-color: #f6fff8;
 }
 
@@ -24,15 +22,14 @@ main{
     gap: 3.125rem;
 }
 
-/* Center the .poem-div and make it a row */
 .poem-div {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the child elements horizontally */
-    align-items: start; /* Center the child elements vertically */
-    gap: 1.25rem; /* Add space between elements */
-    text-align: center; /* Center the text inside each div */
-    width: 100%; /* Add this to ensure proper width */
+    justify-content: center; 
+    align-items: start; 
+    gap: 1.25rem; 
+    text-align: center; 
+    width: 100%; 
 }
 
 .title h1{
@@ -40,12 +37,12 @@ main{
 }
 
 .poem {
-    text-align: left;   /* Aligns the text to the left */
-    font-size: 1.125rem;    /* Adjust font size as needed */
-    line-height: 1.6;   /* Adjust line height for readability */
+    text-align: left;   
+    font-size: 1.125rem;    
+    line-height: 1.6;   
   }
   .poem p {
-    margin: 0;  /* Removes default paragraph margin */
+    margin: 0; 
     font-size: 0.938rem;
   }
  .author p{
@@ -59,7 +56,7 @@ main{
 }
 
 .btn a {
-    text-decoration: none;  /* Removes underline */
+    text-decoration: none; 
 }
 
 .btn button{
