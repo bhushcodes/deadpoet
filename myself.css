@@ -9,14 +9,19 @@ html, body {
     width: 100%;
     font-family: "Special Elite", serif;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     background-color: #f6fff8;
+}
+
+main {
+    padding: 0.625rem;
 }
 
 .btn {
     text-align: center;
     margin-top: 1.25rem;
+    padding: 0.625rem;
 }
 
 .btn a {
@@ -27,6 +32,7 @@ html, body {
     font-family: "Special Elite", serif;
     width: 12.5rem;
     height: 3.125rem;
+    padding: 0.625rem 1rem;
     border-radius: 0.625rem;
     border: 1px solid #6b9080;
     background-color: #eaf4f4;
@@ -61,4 +67,34 @@ html, body {
 
 .btn button span {
     visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.5rem;
+    }
+
+    .btn button {
+        width: 10rem;
+        height: 2.875rem;
+        padding: 0.5rem 0.875rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html, body {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 0.25rem;
+    }
+
+    .btn button {
+        width: 9rem;
+        height: 2.625rem;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
 }
