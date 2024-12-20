@@ -1,22 +1,19 @@
-/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply the font */
 html, body {
     height: 100%;
     width: 100%;
     font-family: "Special Elite", serif;
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
+    justify-content: center; 
+    align-items: center;
     background-color: #f6fff8;
 }
 
-/* Center the .poem-div and make it a row */
 .btn {
     text-align: center;
     margin-top: 1.25rem;
