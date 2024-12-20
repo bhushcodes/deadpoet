@@ -1,11 +1,9 @@
-/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply the font */
 html, body {
     height: 100%;
     width: 100%;
@@ -21,7 +19,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: rem; */
+}
+
+.parts{
+    font-size: 1.125rem;
+    font-weight: bold;
 }
 
 .poem-div {
@@ -31,7 +33,7 @@ main {
     align-items: stretch;
     gap: 1.25rem;
     text-align: center;
-    width: 100%; /* Add this to ensure proper width */
+    width: 100%; 
     padding: 3rem;
 }
 
@@ -43,7 +45,7 @@ main {
     text-align: left;
     font-size: 1.125rem;
     line-height: 1.6;
-    width: 100%; /* Add this to ensure proper width */
+    width: 100%; 
 }
 
 .poem p {
@@ -104,9 +106,6 @@ main {
     visibility: visible;
 }
 
-/* Media Queries for Responsiveness */
-
-/* For screens smaller than 1200px (Tablets and smaller desktops) */
 @media (max-width: 1200px) {
     .poem-div {
         padding: 2rem;
@@ -126,7 +125,6 @@ main {
     }
 }
 
-/* For screens smaller than 768px (Mobile Phones in Portrait) */
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -153,7 +151,6 @@ main {
     }
 }
 
-/* For screens smaller than 480px (Mobile Phones in Landscape) */
 @media (max-width: 480px) {
     body {
         padding: 0.5rem;
