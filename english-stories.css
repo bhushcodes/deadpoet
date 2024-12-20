@@ -1,0 +1,183 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the font */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Special Elite", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6fff8;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: rem; */
+}
+
+.poem-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.25rem;
+    text-align: center;
+    width: 100%; /* Add this to ensure proper width */
+    padding: 3rem;
+}
+
+.title h1 {
+    font-weight: bold;
+}
+
+.poem {
+    text-align: left;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    width: 100%; /* Add this to ensure proper width */
+}
+
+.poem p {
+    margin: 0;
+    font-size: 0.938rem;
+}
+
+.author p {
+    font-weight: bold;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 1.25rem;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+.btn button {
+    font-family: "Special Elite", serif;
+    width: 12.5rem;
+    height: 3.125rem;
+    border-radius: 0.625rem;
+    border: 0.063rem solid #6b9080;
+    background-color: #eaf4f4;
+    transition: 0.18s;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.125rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button:hover {
+    box-shadow: 0.313rem 0.313rem black;
+}
+
+.btn button:hover span {
+    visibility: hidden;
+}
+
+.btn button:hover::after {
+    content: "Thanks!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 1.125rem;
+    font-family: "Special Elite", serif;
+}
+
+.btn button span {
+    visibility: visible;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 1200px (Tablets and smaller desktops) */
+@media (max-width: 1200px) {
+    .poem-div {
+        padding: 2rem;
+    }
+
+    .btn button {
+        width: 10rem;
+        font-size: 1rem;
+    }
+
+    .poem {
+        font-size: 1rem;
+    }
+
+    .poem p {
+        font-size: 0.875rem;
+    }
+}
+
+/* For screens smaller than 768px (Mobile Phones in Portrait) */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .poem-div {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .btn button {
+        width: 10rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .poem {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .poem p {
+        font-size: 0.875rem;
+    }
+}
+
+/* For screens smaller than 480px (Mobile Phones in Landscape) */
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .poem-div {
+        padding: 1rem;
+    }
+
+    .btn button {
+        width: 8rem;
+        height: 2.5rem;
+        font-size: 0.875rem;
+    }
+
+    .poem {
+        font-size: 0.875rem;
+    }
+
+    .poem p {
+        font-size: 0.75rem;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+    }
+}
