@@ -1,11 +1,9 @@
-/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply the font */
 html, body {
     height: 100%;
     width: 100%;
@@ -32,7 +30,7 @@ main {
     align-items: start;
     gap: 1.25rem;
     text-align: center;
-    width: 100%; /* Add this to ensure proper width */
+    width: 100%; 
 }
 
 .title h1 {
@@ -43,7 +41,7 @@ main {
     text-align: left;
     font-size: 1.125rem;
     line-height: 1.6;
-    width: 100%; /* Add this to ensure proper width */
+    width: 100%; 
 }
 
 .poem p {
