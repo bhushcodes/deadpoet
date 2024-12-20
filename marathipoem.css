@@ -21,7 +21,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 3.125rem;
 }
 
 /* Center the .poem-div and make it a row */
@@ -30,7 +30,7 @@ main{
     flex-direction: column;
     justify-content: center; /* Center the child elements horizontally */
     align-items: start; /* Center the child elements vertically */
-    gap: 20px; /* Add space between elements */
+    gap: 1.25rem; /* Add space between elements */
     text-align: center; /* Center the text inside each div */
     width: 100%; /* Add this to ensure proper width */
 }
@@ -41,12 +41,12 @@ main{
 
 .poem {
     text-align: left;   /* Aligns the text to the left */
-    font-size: 18px;    /* Adjust font size as needed */
+    font-size: 1.125rem;    /* Adjust font size as needed */
     line-height: 1.6;   /* Adjust line height for readability */
   }
   .poem p {
     margin: 0;  /* Removes default paragraph margin */
-    font-size: 15px;
+    font-size: 0.938rem;
   }
  .author p{
    font-weight: bold;
@@ -54,7 +54,7 @@ main{
 
 .btn {
     text-align: center;  
-    margin-top: 20px; 
+    margin-top: 1.25rem; 
     
 }
 
@@ -64,14 +64,14 @@ main{
 
 .btn button{
     font-family: "Kalam", serif;
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
+    width: 12.5rem;
+    height: 3.125rem;
+    border-radius: 0.625rem;
     border: 1px solid black;
     transition: 0.18s;  
     cursor: pointer;
     position: relative;
-    font-size: 18px;
+    font-size: 1.125rem;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -81,7 +81,7 @@ main{
 }
 
 .btn button:hover {
-    box-shadow: 5px 5px black; 
+    box-shadow: 0.313rem 0.313rem black; 
 }
 .btn button:hover #buttonText {
     visibility: hidden;  
@@ -95,7 +95,7 @@ main{
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: "Kalam", serif;
 }
 
