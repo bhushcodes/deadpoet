@@ -45,27 +45,35 @@ body {
 }
 
 .btn {
+    width: min(100%, 18rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 0;
     animation: rise-in 0.85s ease both;
 }
 
 .btn a {
     text-decoration: none;
-    width: clamp(11rem, 30vw, 14.5rem);
-    height: clamp(2.9rem, 7vw, 3.6rem);
+    box-sizing: border-box;
+    width: min(100%, clamp(12rem, 62vw, 16rem));
+    min-height: clamp(3rem, 9vw, 3.9rem);
+    padding: clamp(0.72rem, 2.1vw, 0.95rem) clamp(1rem, 3.6vw, 1.6rem);
     border-radius: var(--radius-pill);
     border: 0.1rem solid var(--text);
     background: linear-gradient(135deg, #ffffff 0%, #fff3e6 55%, #ffdbc7 100%);
     color: var(--text);
     font-family: "Lexend Mega", serif;
-    font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+    font-size: clamp(0.82rem, 2vw, 0.98rem);
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: clamp(0.03em, 0.2vw, 0.06em);
     cursor: pointer;
     position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
     box-shadow: var(--shadow-soft);
     transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
 }
@@ -92,25 +100,59 @@ body {
     display: grid;
     place-items: center;
     font-family: "Lexend Mega", serif;
-    font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+    font-size: clamp(0.82rem, 2vw, 0.98rem);
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: clamp(0.03em, 0.2vw, 0.06em);
+    line-height: 1.2;
 }
 
 .btn a span {
     visibility: visible;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    body {
+        gap: clamp(1rem, 3.4vw, 1.6rem);
+    }
+
+    .btn {
+        width: min(100%, 16rem);
+    }
 }
 
 @media (max-width: 480px) {
     body {
         padding: 0.9rem;
+        gap: 1rem;
     }
 
     .heading h1 {
         letter-spacing: 0.04em;
     }
 
+    .btn {
+        width: min(100%, 15.2rem);
+    }
+
     .btn a {
-        width: min(100%, 12.5rem);
+        width: 100%;
+        min-height: 3rem;
+        font-size: clamp(0.8rem, 3.2vw, 0.92rem);
+    }
+
+    .btn a:hover::after {
+        font-size: clamp(0.8rem, 3.2vw, 0.92rem);
+    }
+}
+
+@media (max-width: 360px) {
+    .btn {
+        width: min(100%, 13.5rem);
+    }
+
+    .btn a {
+        min-height: 2.9rem;
+        padding-inline: 0.8rem;
     }
 }
