@@ -132,7 +132,7 @@ body {
     }
 
     .btn {
-        width: min(100%, 15.2rem);
+        width: clamp(14rem, 90vw, 18rem);
     }
 
     .btn a {
@@ -148,7 +148,7 @@ body {
 
 @media (max-width: 360px) {
     .btn {
-        width: min(100%, 13.5rem);
+        width: min(100%, 16rem);
     }
 
     .btn a {
