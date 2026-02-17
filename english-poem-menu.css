@@ -11,6 +11,7 @@ body {
 
 .poem-div {
     width: min(44rem, 100%);
+    margin-inline: auto;
     border: 0.1rem solid var(--border);
     border-radius: var(--radius-card);
     background:
@@ -41,11 +42,13 @@ p {
     padding: 0.78rem 1rem;
     font-size: clamp(1rem, 2vw, 1.24rem);
     line-height: 1.45;
+    text-align: center;
+    overflow-wrap: anywhere;
     transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
 a:hover p {
-    transform: translateX(0.3rem);
+    transform: translateY(-0.08rem);
     border-color: rgba(233, 95, 74, 0.45);
     box-shadow: 0 0.65rem 1.2rem rgba(34, 38, 55, 0.1);
     font-weight: 700;
@@ -58,7 +61,15 @@ a:focus-visible p {
 
 @media (max-width: 480px) {
     body {
-        align-items: flex-start;
+        align-items: center;
+        justify-content: flex-start;
         padding: 0.9rem;
+    }
+}
+
+@media (max-height: 760px) {
+    body {
+        justify-content: flex-start;
+        align-items: center;
     }
 }

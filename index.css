@@ -23,7 +23,7 @@ body {
 }
 
 .heading h1 {
-    width: min(24ch, 100%);
+    width: min(22ch, 100%);
     min-height: var(--heading-fixed-height);
     margin: 0 auto;
     display: grid;
@@ -58,7 +58,7 @@ body {
     background: linear-gradient(135deg, #ffffff 0%, #fff3e6 55%, #ffdbc7 100%);
     color: var(--text);
     font-family: "Lexend Mega", serif;
-    font-size: clamp(0.65rem, 1.6vw, 0.82rem);
+    font-size: clamp(0.78rem, 1.8vw, 0.9rem);
     font-weight: 700;
     letter-spacing: 0.06em;
     cursor: pointer;
@@ -92,7 +92,7 @@ body {
     display: grid;
     place-items: center;
     font-family: "Lexend Mega", serif;
-    font-size: clamp(0.65rem, 1.6vw, 0.82rem);
+    font-size: clamp(0.78rem, 1.8vw, 0.9rem);
     font-weight: 700;
     letter-spacing: 0.06em;
 }
@@ -108,5 +108,9 @@ body {
 
     .heading h1 {
         letter-spacing: 0.04em;
+    }
+
+    .btn a {
+        width: min(100%, 12.5rem);
     }
 }

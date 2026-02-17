@@ -39,6 +39,7 @@ main {
     font-size: clamp(1.02rem, 2vw, 1.22rem);
     line-height: 1.82;
     color: var(--text);
+    overflow-wrap: anywhere;
 }
 
 .poem p {
@@ -77,6 +78,7 @@ main {
     position: relative;
     box-shadow: var(--shadow-soft);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
+    max-width: 100%;
 }
 
 .btn button:hover {
@@ -105,6 +107,16 @@ main {
 
 .btn button span {
     visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .poem-div {
+        padding: clamp(0.9rem, 4vw, 1.5rem);
+    }
+
+    .btn button {
+        width: min(100%, 12rem);
+    }
 }
 
 @media (max-width: 480px) {

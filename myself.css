@@ -27,6 +27,7 @@ main {
 .poem-div p {
     font-size: clamp(1.06rem, 2vw, 1.35rem);
     line-height: 1.78;
+    overflow-wrap: anywhere;
 }
 
 .btn {
@@ -53,6 +54,7 @@ main {
     position: relative;
     box-shadow: var(--shadow-soft);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
+    max-width: 100%;
 }
 
 .btn button:hover {

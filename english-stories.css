@@ -38,6 +38,7 @@ main {
     line-height: 1.6;
     color: var(--accent-strong);
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .poem {
@@ -45,6 +46,7 @@ main {
     font-size: clamp(1rem, 1.95vw, 1.18rem);
     line-height: 1.85;
     color: var(--text);
+    overflow-wrap: anywhere;
 }
 
 .poem p {
@@ -91,6 +93,7 @@ main > p {
     position: relative;
     box-shadow: var(--shadow-soft);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
+    max-width: 100%;
 }
 
 .btn button:hover {
@@ -119,6 +122,16 @@ main > p {
 
 .btn button span {
     visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .poem-div {
+        padding: clamp(0.9rem, 4vw, 1.5rem);
+    }
+
+    .btn button {
+        width: min(100%, 12rem);
+    }
 }
 
 @media (max-width: 480px) {

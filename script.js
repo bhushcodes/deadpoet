@@ -93,7 +93,6 @@ const hashFallbackByPage = {
 
 const topPaddingState = {
     initialized: false,
-    canReserve: false,
     basePaddingTop: 0
 };
 
@@ -132,25 +131,46 @@ function initializeTopPaddingState() {
     }
 
     const bodyStyles = window.getComputedStyle(document.body);
-    const isCenteredFlex = bodyStyles.display.includes('flex') && bodyStyles.justifyContent === 'center';
-
     topPaddingState.initialized = true;
-    topPaddingState.canReserve = !isCenteredFlex;
     topPaddingState.basePaddingTop = parseFloat(bodyStyles.paddingTop) || 0;
 }
 
-function reserveTopPadding(amountPx) {
+function updateFixedUiOffset() {
     initializeTopPaddingState();
 
-    if (!topPaddingState.canReserve) {
+    const navElement = document.querySelector('.app-nav.is-visible');
+    const pickerElement = document.querySelector('.section-lang-picker.is-visible');
+
+    if (navElement && pickerElement) {
+        const navBottom = Math.ceil(navElement.getBoundingClientRect().bottom);
+        pickerElement.style.top = `${navBottom + 8}px`;
+    } else if (pickerElement) {
+        pickerElement.style.removeProperty('top');
+    }
+
+    const fixedUiElements = [navElement, pickerElement].filter(Boolean);
+
+    if (!fixedUiElements.length) {
+        document.body.style.paddingTop = `${topPaddingState.basePaddingTop}px`;
         return;
     }
 
-    const currentReserved = parseFloat(document.body.dataset.topReservedPadding || '0');
-    const nextReserved = currentReserved + amountPx;
+    let maxBottom = 0;
+    fixedUiElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        maxBottom = Math.max(maxBottom, rect.bottom);
+    });
 
-    document.body.dataset.topReservedPadding = String(nextReserved);
-    document.body.style.paddingTop = `${topPaddingState.basePaddingTop + nextReserved}px`;
+    const fixedInset = Math.max(0, Math.ceil(maxBottom + 8));
+    document.body.style.paddingTop = `${topPaddingState.basePaddingTop + fixedInset}px`;
+}
+
+function syncReservedTopPadding() {
+    document.body.style.paddingTop = '';
+    initializeTopPaddingState();
+    const base = parseFloat(window.getComputedStyle(document.body).paddingTop) || 0;
+    topPaddingState.basePaddingTop = base;
+    updateFixedUiOffset();
 }
 
 function buildGlobalNav() {
@@ -186,10 +206,10 @@ function buildGlobalNav() {
     });
 
     document.body.appendChild(nav);
-    reserveTopPadding(62);
 
     requestAnimationFrame(() => {
         nav.classList.add('is-visible');
+        updateFixedUiOffset();
     });
 }
 
@@ -282,10 +302,10 @@ function buildSectionLanguageSwitcher() {
     picker.appendChild(label);
     picker.appendChild(select);
     document.body.appendChild(picker);
-    reserveTopPadding(52);
 
     requestAnimationFrame(() => {
         picker.classList.add('is-visible');
+        updateFixedUiOffset();
     });
 }
 
@@ -351,4 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buildSectionLanguageSwitcher();
     buildScrollProgress();
     enableSmoothInternalTransitions();
+    syncReservedTopPadding();
+    window.addEventListener('resize', syncReservedTopPadding);
+    window.addEventListener('orientationchange', syncReservedTopPadding);
 });
