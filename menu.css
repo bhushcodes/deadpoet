@@ -1,76 +1,76 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import "styles.css";
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Lexend Mega", serif;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f6fff8;
+    padding: clamp(1rem, 3.5vw, 2.5rem);
 }
 
 .grid-container {
-    display: flex; 
-    gap: 1.25rem; 
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap;
-    width: 90%; 
-    max-width: 112.5rem; 
-    text-align: center;
+    width: min(72rem, 100%);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: clamp(0.95rem, 2.2vw, 1.5rem);
+    animation: rise-in 0.7s ease both;
 }
 
 a {
-    text-decoration: none; 
+    text-decoration: none;
+    display: block;
 }
 
 .grid-item {
+    width: 100%;
+    min-height: clamp(5rem, 12vw, 7.2rem);
+    border: 0.1rem solid var(--border);
+    border-radius: var(--radius-card);
+    background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(255, 244, 235, 0.95));
+    color: var(--text);
+    font-family: "Lexend Mega", serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 23.125rem; 
-    height: 7.5rem; 
-    font-size: 1.25rem; 
-    border: 0.063rem solid #6b9080;
-    border-radius: 0.5rem;
-    font-family: "Lexend Mega", serif;
-    transition: 0.18s;
     cursor: pointer;
-    background-color: #eaf4f4;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-button:hover {
-    box-shadow: 0.313rem 0.313rem black; 
+.grid-item h6 {
+    font-size: clamp(0.7rem, 1.25vw, 0.92rem);
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    max-width: 18ch;
+}
+
+.grid-item:hover {
+    transform: translateY(-0.22rem);
+    box-shadow: var(--shadow-float);
+    border-color: rgba(233, 95, 74, 0.55);
+}
+
+.grid-item:focus-visible,
+a:focus-visible .grid-item {
+    outline: 0.13rem solid var(--accent-cool);
+    outline-offset: 0.15rem;
 }
 
 @media (max-width: 768px) {
     .grid-container {
-        flex-direction: column; 
-        gap: 10.313rem; 
-        justify-content: center;
-    }
-
-    .grid-item {
-        width: 10rem; 
-        height: 7.5rem; 
-        font-size: 1.25rem; 
+        grid-template-columns: 1fr;
+        width: min(28rem, 100%);
     }
 }
 
 @media (max-width: 480px) {
-    .grid-container {
-        flex-direction: column; 
-        gap: 0.625rem; 
-        justify-content: center; 
+    body {
+        padding: 0.9rem;
     }
 
     .grid-item {
-        width: 10rem; 
-        height: 12.5rem; 
-        font-size: 1rem;
+        min-height: 4.8rem;
     }
 }

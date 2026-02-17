@@ -1,65 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import "styles.css";
 
-html, body {
-    height: 100%;
-    width: 100%;
+body {
     font-family: "Kalam", serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f6fff8;
+    min-height: 100svh;
+    display: block;
+    padding: clamp(1rem, 3vw, 2.35rem);
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.parts{
-    font-size: 1.125rem;
-    font-weight: bold;
+    width: min(64rem, 100%);
+    margin-inline: auto;
+    display: grid;
+    gap: clamp(1rem, 2.5vw, 1.7rem);
+    animation: rise-in 0.72s ease both;
 }
 
 .poem-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 1.25rem;
-    text-align: center;
-    width: 100%; 
-    padding: 3rem;
+    display: grid;
+    gap: clamp(0.8rem, 1.9vw, 1.2rem);
+    border: 0.1rem solid var(--border);
+    border-radius: var(--radius-card);
+    border-top: 0.35rem solid var(--accent-cool);
+    background:
+        linear-gradient(170deg, rgba(255, 255, 255, 0.98), rgba(240, 246, 255, 0.92));
+    box-shadow: var(--shadow-soft);
+    padding: clamp(1rem, 3vw, 2rem);
 }
 
 .title h1 {
-    font-weight: bold;
+    text-align: center;
+    font-size: clamp(1.65rem, 3.7vw, 2.4rem);
+    line-height: 1.3;
+}
+
+.parts {
+    font-size: clamp(1.22rem, 2.3vw, 1.45rem);
+    line-height: 1.6;
+    color: var(--accent-strong);
+    font-weight: 700;
 }
 
 .poem {
     text-align: left;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    width: 100%; 
+    font-size: clamp(1.14rem, 2.2vw, 1.34rem);
+    line-height: 1.85;
+    color: var(--text);
 }
 
 .poem p {
     margin: 0;
-    font-size: 0.938rem;
+    font-size: inherit;
 }
 
 .author p {
-    font-weight: bold;
+    text-align: right;
+    font-weight: 700;
+    font-size: clamp(1.18rem, 2.35vw, 1.34rem);
+    color: var(--text-soft);
+}
+
+main > p {
+    text-align: center;
+    font-size: clamp(1.05rem, 2.1vw, 1.26rem);
+    letter-spacing: 0.09em;
+    color: var(--accent-cool);
+    font-weight: 700;
 }
 
 .btn {
     text-align: center;
-    margin-top: 1.25rem;
 }
 
 .btn a {
@@ -67,24 +76,31 @@ main {
 }
 
 .btn button {
+    width: clamp(9.6rem, 24vw, 12.7rem);
+    height: clamp(2.8rem, 6.8vw, 3.35rem);
+    border: 0.1rem solid var(--text);
+    border-radius: var(--radius-pill);
+    background: linear-gradient(130deg, #eaf1ff 0%, #d0defe 100%);
+    color: var(--text);
     font-family: "Kalam", serif;
-    width: 12.5rem;
-    height: 3.125rem;
-    border-radius: 0.625rem;
-    border: 0.063rem solid #6b9080;
-    background-color: #eaf4f4;
-    transition: 0.18s;
-    cursor: pointer;
-    position: relative;
-    font-size: 1.125rem;
-    text-align: center;
-    display: flex;
+    font-size: clamp(1.08rem, 2vw, 1.3rem);
+    display: inline-flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .btn button:hover {
-    box-shadow: 0.313rem 0.313rem black;
+    transform: translateY(-0.2rem) scale(1.01);
+    box-shadow: var(--shadow-float);
+}
+
+.btn button:focus-visible {
+    outline: 0.13rem solid var(--accent);
+    outline-offset: 0.15rem;
 }
 
 .btn button:hover span {
@@ -94,87 +110,23 @@ main {
 .btn button:hover::after {
     content: "Thanks!";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 1.125rem;
-    font-family: "Special Elite", serif;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: "Kalam", serif;
+    font-size: clamp(1.08rem, 2vw, 1.3rem);
 }
 
 .btn button span {
     visibility: visible;
 }
 
-@media (max-width: 1200px) {
-    .poem-div {
-        padding: 2rem;
-    }
-
-    .btn button {
-        width: 10rem;
-        font-size: 1rem;
-    }
-
-    .poem {
-        font-size: 1rem;
-    }
-
-    .poem p {
-        font-size: 0.875rem;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    .poem-div {
-        padding: 1.5rem;
-        width: 100%;
-    }
-
-    .btn button {
-        width: 10rem;
-        height: 2.5rem;
-        font-size: 1rem;
-    }
-
-    .poem {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    .poem p {
-        font-size: 0.875rem;
-    }
-}
-
 @media (max-width: 480px) {
     body {
-        padding: 0.5rem;
-    }
-
-    .poem-div {
-        padding: 1rem;
-    }
-
-    .btn button {
-        width: 8rem;
-        height: 2.5rem;
-        font-size: 0.875rem;
+        padding: 0.9rem;
     }
 
     .poem {
-        font-size: 0.875rem;
-    }
-
-    .poem p {
-        font-size: 0.75rem;
-    }
-
-    .title h1 {
-        font-size: 1.5rem;
+        line-height: 1.72;
     }
 }
